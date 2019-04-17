@@ -11,7 +11,7 @@
       <ul>
         <li v-for="(item,index) in items" :key="index">
           <ul>
-            <li v-for="(key,index) in item" :key="index" :class="key.className" @touchstart="press(key)">
+            <li v-for="(key,index) in item" :key="index" :class="key.className" @click="press(key)">
               {{key.value}}
             </li>
           </ul>
@@ -185,6 +185,7 @@
           return
         }
         if (this.numberLegnth.length === 11 && !isNaN(val)) { //限制最大输入长度
+          console.log('已到达最大长度！');
           return
         }
         if (!isNaN(val) || val === '.') { //输入的是数字或者小数点的情况
